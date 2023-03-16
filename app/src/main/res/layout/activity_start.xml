@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:layout_width="@dimen/img_width_height_logo"
+        android:layout_height="@dimen/img_width_height_logo"
+        android:src="@drawable/icon_instagram"
+        android:contentDescription="@string/app_name"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:fontFamily="@font/genos_semibold"
+        android:textSize="@dimen/tv_main"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_tv_main"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

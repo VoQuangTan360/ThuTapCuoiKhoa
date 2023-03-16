@@ -5,12 +5,17 @@ plugins {
 
 android {
     namespace 'com.example.thuctapcuoiky'
-    compileSdk 32
+
+    viewBinding {
+        enabled = true
+    }
+
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.thuctapcuoiky"
-        minSdk 26
-        targetSdk 32
+        minSdk 24
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
