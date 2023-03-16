@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- drawalle resource -->
+    <dimen name="padding_2sp">2sp</dimen>
+    <dimen name="radius_10sp">10sp</dimen>
+    <dimen name="radius_40sp">40sp</dimen>
+    <dimen name="width_stroke">1sp</dimen>
+
+    <!-- textview -->
+    <dimen name="tv_main">25sp</dimen>
+    <dimen name="margin_tv_main">30sp</dimen>
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+
+    <!-- width height -->
+    <dimen name="img_width_height_logo">80sp</dimen>
+
+    <!-- padding -->
+    <dimen name="padding_layout_12sp">12sp</dimen>
+    <dimen name="padding_30sp">30sp</dimen>
+    <dimen name="padding_10sp">10sp</dimen>
+
+    <!-- margin -->
+    <dimen name="margin_30sp">30sp</dimen>
+    <dimen name="margin_20sp">20sp</dimen>
+    <dimen name="margin_15sp">15sp</dimen>
+    <dimen name="margin_10sp">10sp</dimen>
+
+</resources>
