@@ -1,10 +1,12 @@
-package com.example.thuctapcuoiky
+package com.example.thuctapcuoiky.UI
 
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import com.example.thuctapcuoiky.R
+import com.example.thuctapcuoiky.UI.Auth.LoginActivity
 
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

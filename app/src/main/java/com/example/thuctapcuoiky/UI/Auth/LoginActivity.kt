@@ -1,4 +1,4 @@
-package com.example.thuctapcuoiky
+package com.example.thuctapcuoiky.UI.Auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

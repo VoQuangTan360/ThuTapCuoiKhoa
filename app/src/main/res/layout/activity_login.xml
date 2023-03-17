@@ -6,7 +6,7 @@
     android:padding="@dimen/padding_layout_12sp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".UI.Auth.LoginActivity">
 
     <ImageView
         android:layout_width="@dimen/img_width_height_logo"
