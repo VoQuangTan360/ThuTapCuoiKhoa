@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context=".StartActivity">
+    tools:context=".UI.StartActivity">
 
     <ImageView
         android:layout_width="@dimen/img_width_height_logo"
