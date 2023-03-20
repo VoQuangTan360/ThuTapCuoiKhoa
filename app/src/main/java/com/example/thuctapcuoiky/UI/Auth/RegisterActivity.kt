@@ -15,6 +15,7 @@ import com.example.thuctapcuoiky.ViewModel.AuthViewModel
 import com.example.thuctapcuoiky.data.model.User
 
 import com.example.thuctapcuoiky.databinding.ActivityRegisterBinding
+import com.example.thuctapcuoiky.util.MainActivityObserver
 import com.example.thuctapcuoiky.util.UiState
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
             }
             register.setOnClickListener {
                 viewModel.register(
-                    "thoa1234@gmail.com",
+                    "thoa12345@gmail.com",
                     "123123",
                     getUserObj()
                 )
@@ -48,7 +49,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 //    fun observer() {
-//        viewModel.register.observe( ) { state ->
+//        viewModel.register.observe( viewLifecycleOwner) { state ->
 //            when(state){
 //                is UiState.Loading -> {
 //                }
