@@ -1,6 +1,8 @@
 package com.example.thuctapcuoiky.data.repository
 
+import android.content.ContentValues.TAG
 import android.content.SharedPreferences
+import android.util.Log
 import com.example.firebasewithmvvm.util.FireStoreCollection
 import com.example.firebasewithmvvm.util.SharedPrefConstants
 import com.example.thuctapcuoiky.data.model.User
@@ -71,7 +73,9 @@ class AuthRepositoryImpl(
             }
     }
 
-    override fun loginUser(email: String, password: String, result: (UiState<String>) -> Unit) {
+    override fun loginUser(email: String, password: String,
+                           result: (UiState<String>) -> Unit,
+                           resultUser: (User) -> Unit) {
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -79,6 +83,8 @@ class AuthRepositoryImpl(
                         if (it == null){
                             result.invoke(UiState.Failure("Failed to store local session"))
                         }else{
+                            Log.d(TAG, "thong tin loginUser :  $it")
+                            resultUser.invoke(it)
                             result.invoke(UiState.Success("Login successfully!"))
                         }
                     }
@@ -104,6 +110,8 @@ class AuthRepositoryImpl(
                     val user = it.result.toObject(User::class.java)
                     appPreferences.edit().putString(SharedPrefConstants.USER_SESSION,gson.toJson(user)).apply()
                     result.invoke(user)
+
+                    Log.d(TAG,"thong tin:  "+user.toString())
                 }else{
                     result.invoke(null)
                 }
