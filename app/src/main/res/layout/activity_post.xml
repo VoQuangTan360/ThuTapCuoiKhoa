@@ -58,17 +58,15 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/image_post" />
 
-        <!--<com.hendraanggrian.appcompat.widget.SocialAutoCompleteTextView
+        <EditText
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:hint="Description..."
-            android:maxLines="5"
-            app:hashtagColor="@color/colorPrimary"
-            app:socialFlags="hashtag|mention" />-->
+            android:maxLines="5" />
 
     </LinearLayout>
 

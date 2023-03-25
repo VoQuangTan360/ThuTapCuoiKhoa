@@ -21,19 +21,19 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon_search"/>
 
-            <!--<com.hendraanggrian.appcompat.widget.SocialAutoCompleteTextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/search_bar"
                 android:background="@android:color/transparent"
                 android:hint="Search..."
-                android:layout_marginStart="10dp"/>-->
+                android:layout_marginStart="10dp"/>
 
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/bar">
@@ -46,18 +46,17 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/recycler_view_users"
-                android:layout_below="@id/bar"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/recycler_view_tags"
-                android:layout_below="@id/recycler_view_users"
                 android:layout_marginTop="5dp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
