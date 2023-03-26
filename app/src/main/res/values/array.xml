@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tag">
+        <item>@string/tagOne</item>
+        <item>@string/tagTwo</item>
+        <item>@string/tagThree</item>
+        <item>@string/tagFour</item>
+        <item>@string/tagFive</item>
+    </string-array>
+
+    <string-array name="numberPost">
+        <item>@string/numberOne</item>
+        <item>@string/numberTwo</item>
+        <item>@string/numberThree</item>
+        <item>@string/numberFour</item>
+        <item>@string/numberFive</item>
+    </string-array>
+
+</resources>

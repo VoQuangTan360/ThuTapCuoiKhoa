@@ -35,4 +35,15 @@
     <string name="create">Create</string>
     <string name="done">Done</string>
     <string name="error_task_detail">Task detail is missing</string>
+
+    <string name="tagOne">Hoa</string>
+    <string name="tagTwo">DaNang</string>
+    <string name="tagThree">ThienNhien</string>
+    <string name="tagFour">VuiVe</string>
+    <string name="tagFive">ChuNhat</string>
+    <string name="numberOne">123 Post</string>
+    <string name="numberTwo">5 Post</string>
+    <string name="numberThree">1001 Post</string>
+    <string name="numberFour">15 Post</string>
+    <string name="numberFive">50 Post</string>
 </resources>
