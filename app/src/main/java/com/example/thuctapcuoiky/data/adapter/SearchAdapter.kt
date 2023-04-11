@@ -44,7 +44,7 @@ class SearchAdapter(
 
     class TagViewHolder(private val itemTitleBinding: SearchItemBinding) : RecyclerView.ViewHolder(itemTitleBinding.root) {
         fun bindData(title: Search.Tag) {
-            itemTitleBinding.hashTag.text = title.tag
+//            itemTitleBinding.hashTag.text = title.tag
             itemTitleBinding.noOfPosts.text = title.number
         }
     }

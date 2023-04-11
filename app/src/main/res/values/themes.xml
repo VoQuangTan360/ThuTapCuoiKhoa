@@ -13,4 +13,21 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="checkbox_color"
+        parent="Theme.AppCompat.Light"
+
+        >
+        <item name="colorAccent">@color/greenColor</item>
+        <item name="android:textColorSecondary">@color/itemTextColor</item>
+    </style>
+
+    <style name="Theme.Thuctapcuoiky.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Thuctapcuoiky.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Thuctapcuoiky.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
