@@ -2,6 +2,7 @@ package com.example.thuctapcuoiky.UI.Auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -91,6 +92,7 @@ class loginFragment : Fragment() {
                 }
                 is UiState.Failure -> {
                     Toast.makeText(context,state.error, Toast.LENGTH_LONG).show()
+                    Log.d(TAG,"kiem tra: "+state.error)
                 }
                 is UiState.Success -> {
                     Toast.makeText(context,"thanh cong", Toast.LENGTH_LONG).show()

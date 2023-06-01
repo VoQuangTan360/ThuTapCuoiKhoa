@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="30dp">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+
+        android:backgroundTint="@color/brinkPink"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -22,12 +38,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/genos_semibold"
-                    android:textSize="@dimen/tv_main"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/margin_20sp"/>
+                    android:layout_marginStart="@dimen/margin_20sp"
+                    android:layout_marginTop="@dimen/margin_20sp"
+                    android:layout_marginEnd="@dimen/margin_20sp"
+                    android:layout_marginBottom="@dimen/margin_20sp"
+                    android:fontFamily="@font/genos_semibold"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/tv_main"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="@dimen/margin_30sp"
@@ -43,30 +62,210 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/bar">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@id/bar"
+            android:layout_marginTop="-2dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="@dimen/radius_10sp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.8"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_post" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingBottom="20dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgHeader"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity=""
+                                android:src="@drawable/img_profile" />
+
+                            <TextView
+                                android:id="@+id/txtHeaderName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity=""
+                                android:layout_marginTop="10dp"
+                                android:background="@color/itemTextColor"
+                                android:text="Muhammad Adnan"
+                                android:textColor="@color/amour"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:id="@+id/recycler_view_story"/>
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <androidx.recyclerview.widget.RecyclerView
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/posts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="10"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="POSTS"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/followers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="100"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FOLLOWERS"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/following"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="99"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FOLLOWING"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+
+
+                    android:layout_marginStart="35dp"
+
+                    android:background="@drawable/button_background"
+                    android:text="Following"
+                    android:textColor="@color/colorWhite"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:id="@+id/recycler_view_posts"/>
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/group_502"></ImageButton>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:background="@drawable/group_511"></ImageButton>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posting"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_posts"
+                android:layout_width="match_parent"
+                android:layout_height="317dp"
+                android:layout_margin="5dp" />
+
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+
+
+
 
 </RelativeLayout>

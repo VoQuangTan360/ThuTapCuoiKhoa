@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 
 class AuthRepositoryImpl(
@@ -45,6 +46,7 @@ class AuthRepositoryImpl(
                                 }
                             }
                             is UiState.Failure -> {
+                                Log.e(TAG,"check loi11111: "+state.error)
                                 result.invoke(UiState.Failure(state.error))
                             }
                             else -> {}
@@ -60,7 +62,9 @@ class AuthRepositoryImpl(
                     } catch (e: FirebaseAuthUserCollisionException) {
                         result.invoke(UiState.Failure("Authentication failed, Email already registered."))
                     } catch (e: Exception) {
+                        Log.e(TAG,"check loi: "+e.message)
                         result.invoke(UiState.Failure(e.message))
+
                     }
                 }
             }
@@ -79,6 +83,7 @@ class AuthRepositoryImpl(
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    Log.d(TAG, "thong tin loginUser :  ${task.result.user?.uid.toString()}")
                     storeSession(id = task.result.user?.uid ?: ""){
                         if (it == null){
                             result.invoke(UiState.Failure("Failed to store local session"))
@@ -126,7 +131,9 @@ class AuthRepositoryImpl(
     }
 
     override fun updateUserInfo(user: User, result: (UiState<String>) -> Unit) {
-        val document = database.collection(FireStoreCollection.USER).document(user.id)
+//        val document = database.collection(FireStoreCollection.USER).document(user.id)
+
+        val document = database.collection("user").document(user.id)
         document
             .set(user)
             .addOnSuccessListener {

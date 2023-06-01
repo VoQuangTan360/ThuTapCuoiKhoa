@@ -8,4 +8,7 @@
     <color name="brinkPink">#F46888</color>
     <color name="amour">#FAF1F1</color>
     <color name="bonJour">#E2DADB</color>
+    <color name="transparentColor" >#00FFFFFF</color>
+    <color name="itemTextColor">#707070</color>
+    <color name="greenColor">#3FBD44</color>
 </resources>

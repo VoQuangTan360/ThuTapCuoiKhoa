@@ -3,8 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
+
 
     <application
         android:name=".MyApplication"
@@ -17,24 +27,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Thuctapcuoiky"
         tools:targetApi="31">
+
         <activity
-            android:name=".UI.Home.HomeActivity"
+            android:name=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+<!--        <activity-->
+<!--&lt;!&ndash;            android:name="com.canhub.cropper.CropImageActivity"&ndash;&gt;-->
+<!--            android:theme="@style/Base.Theme.AppCompat">-->
+<!--        </activity>-->
+
+
         <activity
             android:name=".UI.Auth.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".UI.Home.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.Auth.LoginActivity"
             android:exported="false" />
+
+
         <activity
             android:name=".UI.StartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import com.example.thuctapcuoiky.R
 import com.example.thuctapcuoiky.databinding.ActivityHomeBinding
 import com.example.thuctapcuoiky.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class  HomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityHomeBinding;
@@ -15,16 +17,17 @@ class  HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        replaceFragment(HomeFragment())
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.nav_home->replaceFragment(HomeFragment())
                 R.id.nav_search->replaceFragment(SearchFragment())
-                R.id.nav_add->replaceFragment(SearchFragment())
-                R.id.nav_host->replaceFragment(ProfileFragment())
+                R.id.nav_add->replaceFragment(NotificationFragment())
+                R.id.nav_heart->replaceFragment(PostFragment())
                 R.id.nav_profile->replaceFragment(ProfileFragment())
-                else ->{
 
+                else ->{
+                    replaceFragment(HomeFragment())
                 }
             }
 
