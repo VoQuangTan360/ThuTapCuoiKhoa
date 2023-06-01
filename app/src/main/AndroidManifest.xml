@@ -23,6 +23,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/icon_instagram"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/icon_instagram"
         android:supportsRtl="true"
         android:theme="@style/Theme.Thuctapcuoiky"
