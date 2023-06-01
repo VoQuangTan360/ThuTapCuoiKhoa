@@ -17,7 +17,7 @@ class  HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        replaceFragment(HomeFragment())
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.nav_home->replaceFragment(HomeFragment())

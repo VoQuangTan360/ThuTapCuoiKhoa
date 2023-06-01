@@ -22,58 +22,58 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RegisterActivity : AppCompatActivity() {
 
-//    private lateinit var binding: ActivityRegisterBinding
-//    val viewModel: AuthViewModel by viewModels()
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-////        observer()
-//        binding = ActivityRegisterBinding.inflate(LayoutInflater.from(this@RegisterActivity))
-//        setContentView(binding.root)
-//        handleListener()
-//    }
-//
-//    private fun handleListener() {
-//        binding.apply {
-//            tvLogin.setOnClickListener {
-//                navigationActivity()
+    private lateinit var binding: ActivityRegisterBinding
+    val viewModel: AuthViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+//        observer()
+        binding = ActivityRegisterBinding.inflate(LayoutInflater.from(this@RegisterActivity))
+        setContentView(binding.root)
+        handleListener()
+    }
+
+    private fun handleListener() {
+        binding.apply {
+            tvLogin.setOnClickListener {
+                navigationActivity()
+            }
+            register.setOnClickListener {
+                viewModel.register(
+                    "thoa12345@gmail.com",
+                    "123123",
+                    getUserObj()
+                )
+            }
+
+        }
+    }
+//    fun observer() {
+//        viewModel.register.observe(view) { state ->
+//            when(state){
+//                is UiState.Loading -> {
+//                }
+//                is UiState.Failure -> {
+//                    Toast.makeText(this@RegisterActivity,state.error, Toast.LENGTH_LONG).show()
+//                }
+//                is UiState.Success -> {
+//                    Toast.makeText(this@RegisterActivity,"Thanh Cong", Toast.LENGTH_LONG).show()
+//                }
 //            }
-//            register.setOnClickListener {
-//                viewModel.register(
-//                    "thoa12345@gmail.com",
-//                    "123123",
-//                    getUserObj()
-//                )
-//            }
-//
 //        }
 //    }
-////    fun observer() {
-////        viewModel.register.observe( viewLifecycleOwner) { state ->
-////            when(state){
-////                is UiState.Loading -> {
-////                }
-////                is UiState.Failure -> {
-////                    Toast.makeText(this@RegisterActivity,state.error, Toast.LENGTH_LONG).show()
-////                }
-////                is UiState.Success -> {
-////                    Toast.makeText(this@RegisterActivity,"Thanh Cong", Toast.LENGTH_LONG).show()
-////                }
-////            }
-////        }
-////    }
-//
-//    fun getUserObj(): User {
-//        return User(
-//            id = "",
-//            first_name = "tan",
-//            last_name = "vo",
-//            job_title = "voQuangTan",
-//            email = "thoa123@gmail.com",
-//        )
-//    }
-//    private fun navigationActivity() {
-//        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-//        startActivity(intent)
-//    }
+
+    fun getUserObj(): User {
+        return User(
+            id = "",
+            first_name = "tan",
+            last_name = "vo",
+            job_title = "voQuangTan",
+            email = "thoa123@gmail.com",
+        )
+    }
+    private fun navigationActivity() {
+        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+        startActivity(intent)
+    }
 }

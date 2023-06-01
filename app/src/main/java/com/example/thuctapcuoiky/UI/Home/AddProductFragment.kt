@@ -1,6 +1,7 @@
 package com.example.thuctapcuoiky.UI.Home
 
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
 
@@ -25,8 +26,12 @@ import com.example.thuctapcuoiky.R
 import com.example.thuctapcuoiky.ViewModel.AddProductViewModel
 import com.example.thuctapcuoiky.ViewModel.AuthViewModel
 import com.example.thuctapcuoiky.databinding.FragmentAddProductBinding
+import com.google.android.material.snackbar.Snackbar
 
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AddProductFragment : Fragment() {
@@ -78,9 +83,11 @@ class AddProductFragment : Fragment() {
 
         binding.choosePicGall.setOnClickListener{
 
-
             pickImageFromGallery()
             binding.imagedemo.visibility = View.VISIBLE
+
+
+
         }
 
         binding.selectDialog.setOnClickListener {
@@ -98,6 +105,14 @@ class AddProductFragment : Fragment() {
         binding.selectDialogCurrency.setOnClickListener {
             openDialogchooseCurrenency()
         }
+        binding.btnContinue.setOnClickListener {
+
+            model.SetPricing(binding.money.text.toString())
+            model.SetStock(binding.stock.text.toString())
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(com.example.thuctapcuoiky.R.id.fragment_container,ReviewProductFragment()).commit()
+
+        }
 
 
     }
@@ -111,19 +126,11 @@ class AddProductFragment : Fragment() {
         dialog.show((activity as AppCompatActivity).supportFragmentManager,"show dialog")
     }
 
-    private fun requestStorage() {
-        permissionToRequest.add(android.Manifest.permission.READ_EXTERNAL_STORAGE)
-        permissionToRequest.add(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-
-        permissionLauncher.launch(permissionToRequest.toTypedArray())
-    }
-
-    private fun pickImage() {
 
 
+    private fun  pickImage() {
 
     }
-
     private fun pickImageFromGallery() {
         //Intent to pick image
         val intent = Intent(Intent.ACTION_PICK)
@@ -131,25 +138,16 @@ class AddProductFragment : Fragment() {
         startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
+
+
     companion object {
         //image pick code
         private val IMAGE_PICK_CODE = 1000;
         //Permission code
         private val PERMISSION_CODE = 1001;
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-//            val result = CropImage.getActivityResult(data)
-//            if (resultCode == Activity.RESULT_OK) {
-//                image = result.uri
-//
-//                updateImage(image!!)
-//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-//                Snackbar.make(binding.root, "${result.error}", Snackbar.LENGTH_SHORT).show()
-//            }
-//        }
-    }
+
+
 
 
 

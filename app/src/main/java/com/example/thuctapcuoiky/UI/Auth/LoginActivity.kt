@@ -11,31 +11,31 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
-//    private lateinit var binding: ActivityLoginBinding
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        binding = ActivityLoginBinding.inflate(LayoutInflater.from(this@LoginActivity))
-//        setContentView(binding.root)
-//        handleListener()
-//    }
-//
-//    private fun handleListener() {
-//        binding.apply {
-//            edtEmail.doAfterTextChanged {
-//
-//            }
-//            edtPassword.doAfterTextChanged {
-//
-//            }
-//            tvRegister.setOnClickListener {
-//                navigationActivity()
-//            }
-//        }
-//    }
-//
-//    private fun navigationActivity() {
-//        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-//        startActivity(intent)
-//    }
+    private lateinit var binding: ActivityLoginBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(LayoutInflater.from(this@LoginActivity))
+        setContentView(binding.root)
+        handleListener()
+    }
+
+    private fun handleListener() {
+        binding.apply {
+            edtEmail.doAfterTextChanged {
+
+            }
+            edtPassword.doAfterTextChanged {
+
+            }
+            tvRegister.setOnClickListener {
+                navigationActivity()
+            }
+        }
+    }
+
+    private fun navigationActivity() {
+        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        startActivity(intent)
+    }
 }

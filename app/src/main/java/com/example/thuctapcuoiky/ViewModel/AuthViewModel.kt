@@ -11,6 +11,8 @@ import com.example.thuctapcuoiky.data.repository.AuthRepository
 import com.example.thuctapcuoiky.data.repository.CustomerRepository
 import com.example.thuctapcuoiky.util.UiState
 import com.fatherofapps.androidbase.data.database.entities.CustomerEntity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -67,6 +69,8 @@ class AuthViewModel @Inject constructor(
         email: String,
         password: String
     ) {
+        val firebase=Firebase
+
         _login.value = UiState.Loading
         repository.loginUser(
             email,
@@ -74,7 +78,7 @@ class AuthViewModel @Inject constructor(
             ,resultUser =
             {
                 if (it != null){
-                    Log.d(TAG, "user firebase :$it")
+                    Log.d(TAG, "user firebase :${it.id}")
                     Log.d(TAG, "co tao room")
                     createDataBaseLocall(
                         CustomerEntity(
